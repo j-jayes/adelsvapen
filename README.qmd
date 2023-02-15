@@ -1,5 +1,4 @@
 ---
-title: "README"
 format: gfm
 execute: 
   warning: false
@@ -7,11 +6,11 @@ execute:
   messae: false
 ---
 
-## Purpose
+# Purpose
 
 Scraper of [Adelsvapen](https://www.adelsvapen.com/genealogi/Huvudsida) genealogy website for noble families of Sweden.
 
-### Planning
+## Planning
 
 This is what the website looks like:
 
@@ -32,7 +31,7 @@ Ideally we would want to process this text in such way to keep the bolded names,
 knitr::include_graphics("images/abrahamsson.PNG")
 ```
 
-#### Robots.txt
+### Robots.txt
 
 First we check if they have asked us not to scrape the website.
 
@@ -49,7 +48,7 @@ knitr::include_graphics("images/robots-top.PNG")
 knitr::include_graphics("images/robots.PNG")
 ```
 
-#### Starting point
+### Starting point
 
 We want to get a list of the noble families and a link to their family trees, as shown in the table below:
 
@@ -80,6 +79,8 @@ noble_families %>%
   tab_footnote(md("Source: [Adelsvapen](https://www.adelsvapen.com/)")) %>% 
   as_raw_html(inline_css = TRUE)
 ```
+
+### Branches
 
 Next we want to scrape the links to the branches of family trees for each family. They look like this:
 
@@ -145,12 +146,14 @@ family_links %>%
   as_raw_html(inline_css = TRUE)
 ```
 
+### Information on each branch of family tree
 
+Next we want to get the data from each of these branches, including the title, information about the origin individual, and information on their children.
 
 ```{r}
 #| eval: false
 #| echo: true
-
+# Again lets write a function for this
 url_in = "https://www.adelsvapen.com/genealogi/Abrahamsson_nr_1817"
 
 get_info_from_family <- function(url_in) {
@@ -227,6 +230,7 @@ data %>%
 knitr::include_graphics(here::here("temp", "Abrahamsson_info.png"))
 ```
 
+### Images of family crest
 
 We can also include the family crest:
 
@@ -235,3 +239,8 @@ We can also include the family crest:
 knitr::include_graphics(here::here("scraped_images", "Abrahamsson_nr_1817.jpg"))
 ```
 
+## Conclusion
+
+To get the information on each of the family branches, we need to loop through our list of 2,335 branches. This will take some time - at 10 seconds of wait time between each hit - it is just more than 6 hours.
+
+We also need to think about how to structure the data that we scrape before going through the whole scraping process.
