@@ -3,6 +3,8 @@ title: "README"
 format: gfm
 execute: 
   warning: false
+  echo: false
+  messae: false
 ---
 
 ## Purpose
@@ -52,6 +54,7 @@ knitr::include_graphics("images/robots.PNG")
 We want to get a list of the noble families and a link to their family trees, as shown in the table below:
 
 ```{r}
+#| eval: false
 library(tidyverse)
 library(gt)
 
@@ -76,8 +79,13 @@ noble_families %>%
   tab_header(title = md("**Noble families of Sweden**")) %>%
   tab_options(column_labels.hidden = TRUE) %>% 
   tab_footnote(md("Source: [Adelsvapen](https://www.adelsvapen.com/)")) %>% 
-  as_raw_html(inline_css = TRUE)
+  gtsave(here::here("temp", "noble_families.png"))
 ```
+
+```{r}
+knitr::include_graphics(here::here("temp", "noble_families.png"))
+```
+
 
 Next we want to scrape the links to the branches of family trees for each family. They look like this:
 
@@ -129,6 +137,7 @@ So now we have a link to each of the 2,335 branches of the family trees.
 A sample of these is shown below in a table
 
 ```{r}
+#| eval: false
 family_links <- read_rds(here::here("links", "family_links.rds"))
 
 family_links %>% 
@@ -140,9 +149,12 @@ family_links %>%
   tab_header(title = md("**Sample of branches**")) %>% 
   cols_label(family = "Noble family",
              branch_url = "Branch name") %>% 
-  as_raw_html(inline_css = TRUE)
+  gtsave(here::here("temp", "family_links_sample.png"))
 ```
 
+```{r}
+knitr::include_graphics(here::here("temp", "family_links_sample.png"))
+```
 
 
 ```{r}
@@ -195,10 +207,7 @@ data <- get_info_from_family(url_in)
 
 data %>% 
   write_rds(here::here("temp", "Abrahamsson.rds"))
-```
 
-
-```{r}
 data <- read_rds(here::here("temp", "Abrahamsson.rds"))
 
 data %>%
@@ -219,13 +228,20 @@ data %>%
   ) %>%
   tab_header(title = md("**Example of data on individual family branches**")) %>%
   tab_footnote(md("Source: [Adelsvapen](https://www.adelsvapen.com/genealogi/Abrahamsson_nr_1817)")) %>% 
-  as_raw_html(inline_css = TRUE)
+  gtsave(here::here("temp", "Abrahamsson_info.png"))
 
 ```
+
+```{r}
+#| fig-cap: Abrahamsson 1817 Family information
+knitr::include_graphics(here::here("temp", "Abrahamsson_info.png"))
+```
+
 
 We can also include the family crest:
 
 ```{r}
+#| fig-cap: Abrahamsson 1817 Family crest
 knitr::include_graphics(here::here("scraped_images", "Abrahamsson_nr_1817.jpg"))
 ```
 
