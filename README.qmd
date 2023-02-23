@@ -12,11 +12,12 @@ Scraper of [Adelsvapen](https://www.adelsvapen.com/genealogi/Huvudsida) genealog
 
 ## Output
 
+Click [here](https://rawcdn.githack.com/j-jayes/adelsvapen/49945be4674b039499f06050102ec22840f89814/03-processor.html) to see what the data looks like.
+
+
 ```{r}
-knitr::include_url()
+knitr::include_graphics("images/example_data.PNG")
 ```
-
-
 
 ## Planning
 
