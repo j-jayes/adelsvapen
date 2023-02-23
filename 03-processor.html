@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Processing</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="03-processor_files/libs/clipboard/clipboard.min.js"></script>
+<script src="03-processor_files/libs/quarto-html/quarto.js"></script>
+<script src="03-processor_files/libs/quarto-html/popper.min.js"></script>
+<script src="03-processor_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="03-processor_files/libs/quarto-html/anchor.min.js"></script>
+<link href="03-processor_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="03-processor_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="03-processor_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="03-processor_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="03-processor_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Processing</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<p>Give examples of the data in a table.</p>
+</section>
+<section id="info" class="level2">
+<h2 class="anchored" data-anchor-id="info">Info</h2>
+<p>Here is an example of 4 families shown with the data collected.</p>
+<p>The coloured bar shows the name of the family, the tab number (if there are no tabs on the page, it will default to tab 0), and information about when the family was introduced as nobility.</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="jrvketnvyz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#jrvketnvyz) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#jrvketnvyz) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#jrvketnvyz) .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+:where(#jrvketnvyz) .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#jrvketnvyz) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#jrvketnvyz) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#jrvketnvyz) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#jrvketnvyz) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#jrvketnvyz) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#jrvketnvyz) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#jrvketnvyz) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#jrvketnvyz) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#jrvketnvyz) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+:where(#jrvketnvyz) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#jrvketnvyz) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#jrvketnvyz) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#jrvketnvyz) .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#jrvketnvyz) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#jrvketnvyz) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#jrvketnvyz) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#jrvketnvyz) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#jrvketnvyz) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#jrvketnvyz) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#jrvketnvyz) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#jrvketnvyz) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#jrvketnvyz) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#jrvketnvyz) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#jrvketnvyz) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#jrvketnvyz) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#jrvketnvyz) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#jrvketnvyz) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#jrvketnvyz) .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#jrvketnvyz) .gt_left {
+  text-align: left;
+}
+
+:where(#jrvketnvyz) .gt_center {
+  text-align: center;
+}
+
+:where(#jrvketnvyz) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#jrvketnvyz) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#jrvketnvyz) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#jrvketnvyz) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#jrvketnvyz) .gt_super {
+  font-size: 65%;
+}
+
+:where(#jrvketnvyz) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#jrvketnvyz) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#jrvketnvyz) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#jrvketnvyz) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#jrvketnvyz) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#jrvketnvyz) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#jrvketnvyz) .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="1" class="gt_heading gt_title gt_font_normal" style=""><strong>Example of Adelsvapen family data</strong></td>
+    </tr>
+    <tr>
+      <td colspan="1" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Adelstierna nr 1441</td>
+    </tr>
+  </thead>
+  
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #191970; color: #FFFFFF; font-style: italic;" scope="col" id="Adelstierna nr 1441 - TAB 1 - Adlad 1708-03-25, introducerad 1719. Utdöd 1734-12-16.">Adelstierna nr 1441 - TAB 1 - Adlad 1708-03-25, introducerad 1719. Utdöd 1734-12-16.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adelstierna nr 1441 - TAB 1 - Adlad 1708-03-25, introducerad 1719. Utdöd 1734-12-16.  value" class="gt_row gt_left">Elias Gavelius, adlad Adelstierna (son av Nils Eliæson Gavelius, se adlad ätten Cederschiöld, Tab. 2), till Husby i Munsö socken, Stockholms län, född 1653-08-12 i Gävle. Kommissarie i Svea hovrätt 1687. Assessor i exekutionskommissionen 1696. Änkedrottning Hedvig Eleonoras hovkamrerare 1698. Adlad, jämte brodern Nils, 1708-03-25 (introducerad 1719 under nr 1441). Död 1726-03-29 på Husby och begraven i Munsö kyrka, där hans vapen uppsattes. Gift 1:o med Anna Lockmann, begraven 1709-02-21 i högkoret i Spånga kyrka, Stockholms län. Gift 2:o 1724, med kungligt tillstånd, med Abela Catharina Pincier, i hennes 2:a gifte (gift 1:o med handlanden i Göteborg Christian Gertner, vilken omkom under en resa till Ostindien 1712), död 1738-03-14 på Husby, dotter av amtsförvaltaren Johan Albrekt Hermansson Pincier och Abela Lyders.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #191970; color: #FFFFFF; font-style: italic;" scope="col" id="Adelstierna nr 1441 - TAB 2 - Adlad 1708-03-25, introducerad 1719. Utdöd 1734-12-16.">Adelstierna nr 1441 - TAB 2 - Adlad 1708-03-25, introducerad 1719. Utdöd 1734-12-16.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adelstierna nr 1441 - TAB 2 - Adlad 1708-03-25, introducerad 1719. Utdöd 1734-12-16.  value" class="gt_row gt_left">Nils Gavelius, adlad Adelstierna (son av Nils Eliseson Gavelius, se adlade ätten Cederschiöld, Tab. 2), född 1663. Student i Uppsala (Um.) 1682-11-25 och i Åbo (Lå.)1688. Advokatfiskal i änkedrottning Hedvig Eleonoras livgeding samt tillika hovauditör, borgmästare i Eskilstuna och häradshövding i Strömsholms och Svartsjö län. Hauptman över livgedinget 1708 (EÄ 1705) [Af.]. Adlad jämte brodern Elias 1708-03-25 (introducerad 1719 under nr 1441). Lagmans titel 1719. Död ogift 1734-12-16 och begraven i Tumbo kyrka, Södermanlands län samt slöt ätten.</td></tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="1">Source: <a href="https://www.adelsvapen.com/genealogi/Adelstierna_nr_1441">click here for family page</a></td>
+    </tr>
+  </tfoot>
+  
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="esyyichzgj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#esyyichzgj) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#esyyichzgj) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#esyyichzgj) .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+:where(#esyyichzgj) .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#esyyichzgj) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#esyyichzgj) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#esyyichzgj) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#esyyichzgj) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#esyyichzgj) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#esyyichzgj) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#esyyichzgj) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#esyyichzgj) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#esyyichzgj) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+:where(#esyyichzgj) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#esyyichzgj) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#esyyichzgj) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#esyyichzgj) .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#esyyichzgj) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#esyyichzgj) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#esyyichzgj) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#esyyichzgj) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#esyyichzgj) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#esyyichzgj) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#esyyichzgj) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#esyyichzgj) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#esyyichzgj) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#esyyichzgj) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#esyyichzgj) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#esyyichzgj) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#esyyichzgj) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#esyyichzgj) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#esyyichzgj) .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#esyyichzgj) .gt_left {
+  text-align: left;
+}
+
+:where(#esyyichzgj) .gt_center {
+  text-align: center;
+}
+
+:where(#esyyichzgj) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#esyyichzgj) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#esyyichzgj) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#esyyichzgj) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#esyyichzgj) .gt_super {
+  font-size: 65%;
+}
+
+:where(#esyyichzgj) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#esyyichzgj) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#esyyichzgj) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#esyyichzgj) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#esyyichzgj) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#esyyichzgj) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#esyyichzgj) .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="1" class="gt_heading gt_title gt_font_normal" style=""><strong>Example of Adelsvapen family data</strong></td>
+    </tr>
+    <tr>
+      <td colspan="1" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Adlerbielke nr 1675</td>
+    </tr>
+  </thead>
+  
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #2CA25F; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbielke nr 1675 - TAB 1 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.">Adlerbielke nr 1675 - TAB 1 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbielke nr 1675 - TAB 1 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Anders Bengtsson, levde på 1600-talet och var bonde på hemmanet Ingared i As socken, Jönköpings län. Gift med Anna Svensdotter. Båda ligga begravna på As kyrkogård under en av deras söner år 1716 påkostad väl uthuggen gravsten.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 1 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 1 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Andreas Ingerman, född 1647-08-10 på Ingared. Skolpilt i Växjö 1656. Student i Uppsala (Um.)1671-09-07. Fil. mag. i Uppsala (Um.) 1679. Prästvigd (Vsn.) 1679. Kyrkoherde i Göteryds och Traheryds församlingars pastorat av Växjö stift 1680. Prost över Sunnerbo härad 1695. Död 1732-10-29 och begraven 1733-03-06 i Göteryds kyrka, där ett epitafium över honom samt hans och hans 1:a hustrus porträtt uppsattes. Gift 1:o 1680-08-29 med Maria Unnera i hennes 2:a gifte (gift 1:o med mannens företrädare i Göteryd, prosten och kyrkoherden Andreas Andreæ Dryander, död (Vsn.) 1679-10-04), född 1646-05-16 i Växjö, död 1711-10-01 i Göteryd och begraven 1711-11-19, dotter av teol. lektorn i Växjö mag. Gislo Unnerus och Helena Eriksdotter. Gift 2:o 1713 med Dorotea Rubenia. i hennes 2:a gifte (gift 1:o med kyrkoherden i Pjätteryds pastorat av Växjö stift Sven Tiliander, född 1637, död 1706), död 1730, dotter av kyrkoherden i Vittaryds pastorat av Växjö stift Nils Rubenius och Gunilla Påvelsdotter.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 1 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 1 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">1. Josua Ingerman, adlad Adlerbielke (översiktstab. 3). Född 1685-08-02. Volontär vid fortifikationen 1704-04-24. Kommenderades 1706 att såsom konduktör tjänstgöra vid Karlstens fästning. Konduktör vid fortifikationsbrigaden i Göteborg 1707-01-17. Konduktör vid fortifikationsstaten i Stockholm 1708-08-01. Löjtnant vid fortifikationen på Dalarö skans 1709-11-19. Konfirmationsfullmakt (Lk.) 1717-04-02. Minörkapten vid fältartilleriet 1717-08-22. Adlad 1719-10-20 (introducerad 1720 under nr 1675). Major vid artilleribataljonen i Finland och kommendant i Willmansstrand 1734-11-14. Major vid artilleribataljonen i Göteborg 1741-08-13. Överstelöjtnant vid artilleriet i Malmö och kommendant vid artilleriet i Malmö 1741-10-10. RSO 1748-11-07 med valspråk 'pro patria'. Överste i armén 1757-07-19. Generalmajor 1765-06-17. Avsked 1770-09-26. Död 1774-05-28 i Malmö och med sin fru begraven i murad grav i Göteryds kyrka, till vilken han gjort många föräringar. Han bevistade 1758 års fälttåg i Pommern. Gift 1712-03-07 med Maria Christina Strokirch, född 1685, död 1769-07-20 i Malmö, dotter av överkrigskommissarien Laurentz Strokirch, adlad Strokirch, nr 1082, och Christina Olderman, adlad Cronstedt, nr 1104, B.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 1 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 1 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Lorentz Anders, född 1713. Löjtnant. Död 1767. Se Tab. 2.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 1 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Carl Fredrik, född 1720-12-10. Student i Uppsala (Um.)1729-02-03. Auskultant i bergskollegium (Ab.) 1736-11-29. Underlantjägare i Kronobergs län (Sj) 1737-06-27. Volontär vid livgardet 1738. Förare vid livgardet 1738. Sergeant 1741. Sergeant vid artilleriet 1741. Död ogift 1742-01-02 under fälttåget i Finland.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #2CA25F; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbielke nr 1675 - TAB 2 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.">Adlerbielke nr 1675 - TAB 2 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbielke nr 1675 - TAB 2 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Lorentz Anders (översiktstab. 3, son av Josua Ingerman, adlad Adlerbielke, Tab. 1), född 1713-03-07 i Stockholm. Student i Uppsala (Um.) 1729-02-03. Auskultant i Stockholms stads rådhus- och kämnersrätter 1734-05-03. Konstapel vid artilleriet 1736-03-02. Furir vid artilleriet 1737-02-10. Sergeant 1738-12-07. Livdrabant 1740-04-01. Sekundlöjtnant vid Savolaks och Nyslotts läns infanteriregemente 1742-04-14. Replacerad till sin förr innehavda livdrabantsbeställning 1742. Vice korpral vid Livdrabantkåren 1760-10-14. Löjtnant vid livregementet till häst 1761-09-14. Avsked 1764-05-02. Död 1767-11-10 i Stockholm. Gift 1:o 1741-08-25 med Elisabet Scharling, född 1719, död 1751-06-28, dotter av notarien Erik Scharling. Gift 2:o 1753-05-06 med Cecilia Susanna Charlotta von Hässling, född 1737-01-06 i S: t Petersburg, död 1759-11-14 Valla, dotter av medaljören och assessorn i ryska bergskollegium Daniel von Hässling.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 2 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 2 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">2. Maria Josefina, född 1754-04-07 i Stockholm, död 1821-07-13 på Asa i likanämnd socken, Kronobergs län. Gift 1770-01-09 i Malmö med stadsmajoren och riddaren Sven Erik, Flodin, död 1794-02-12.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 2 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">2. Carl Johan, född 1755. Major. Död 1808. Se Tab. 3.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 2 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">2. Christina Lovisa, född 1758-01-17, död 1791-04-11 i Malmö. Gift 1773-03-07 med hovkvartermästaren Carl Gustaf Sommar.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 2 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">2. Catharina Fredrika, född 1759-10-10, död 1763-08-07.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #2CA25F; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.">Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Carl Johan (översiktstab. 4, son av Lorentz Anders, Tab. 2), född 1755-12-09. Antagen i krigstjänst (KrAB.) 1768-03-10. Sergeant vid major Bilangs komp. i Helsingfors (KrAB.)1769-05-12. Adjutant vid artilleriet på Gotland 1772-09-18. Underlöjtnant 1773-04-22. Löjtnant 1782-08-28. Kapten 1788-05-20. Sekundmajor vid Vendes artilleriregemente 1794-12-19. Premiärmajor vid Vendes artilleriregemente 1797-12-04. RSO 1799-11-16. Död 1808-11-01 i Kristianstad. Han bevistade kriget i Finland 1788–90. Gift 1786-01-02 i Malmö med Margareta Botilla Montell, född 1762-08-24, död 1828-09-10 å Danviks hospital, dotter av majoren vid fortifikationen och kommendanten i Malmö Per Johan Montell och Maria Pripp.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Lorentz Johan, född 1786-09-03 i Malmö, Skåne. Sergeant vid artilleriet i Göteborg 1788-04-21. Avsked 1796-08-10. Sergeant vid Vendes artilleriregemente 1796-10-01. Styckjunkare vid Vendes artilleriregemente 1805-06-25. Underlöjtnant 1806-10-04. Löjtnant vid Smålands dragoners infanteribataljon 1812-07-23. Kapten i armén 1818-05-11. Kapten vid Smålands grenadjärbataljon 1822-01-15. RSO 1823-07-04. Avsked 1837-06-30. Död ogift 1871-01-05 i Jönköping. 'Han blev 1807-08-00 etter ett tappert motstånd fången av fransmännen, då de överraskade Danholmen, och återkom ur fångenskapen först 1812. '</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Carl August, född 1788 i Malmö. Löjtnant. Tullinspektor. Död 1837. Se Tab. 4.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Elisabet Charlotta Aurora, född 1791-08-18 i Malmö (Kristianstad). Stiftsjungfru. Död 1888-03-18 Lunnaberg s socken, Jönköpings län. Gift 1815-02-20 på Odersberga i Fjelkestads socken, Kristianstads län med översten Gustaf Gustafschöld, nr 2107, född 1777, död 1843.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Peter Josua, född 1793-01-06 i Malmö, död 1793-04-28.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Maria Gustava, född 1794-03-24 i Malmö. Död 1877-05-03 i Lund. Gift 1821-11-27 Ingelstad s socken, Kristianstads län med landshövdingen greve Axel Gabriel De la Gardie, i hans 2:a gifte, född 1772, död 1838.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Peter Josua, född 1795-07-13 i Malmö. Sergeant vid Vendes artilleriregemente 1808-11-22. Fänrik vid norra skånska infanteriregementet 1816-05-28. 2. Löjtnant vid norra skånska infanteriregementet 1822-01-22. Kapten 1839-07-19. Avsked 1845-07-31. Carl XIV Johans medalj. Död ogift 1874-12-19 i Kristianstad.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Christina Lovisa, född 1796-09-30 i Malmö, död 1804-10-19.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Gustaf, född 1798 i Malmö. Löjtnant. Död 1850. Se Tab. 5.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 3 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Ulrika Eleonora, född 1799-06-28 i Malmö. Död 1867-11-23 Vasatorp s socken, Malmöhus län. Gift 1831-08-22 i Kristianstad med ryttmästaren friherre Kjell Salomon Bennet, nr 154, född 1797, död 1891.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #2CA25F; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbielke nr 1675 - TAB 4 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.">Adlerbielke nr 1675 - TAB 4 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbielke nr 1675 - TAB 4 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Carl August (översiktstab. 4, son av Carl Johan, Tab. 3), född 1788-02-18 i Malmö. Kadett vid fortifikationen 1790-12-06. Vice auditör vid Vendes artilleriregemente 1808-04-09. Fanjunkare 1809-03-05 och fänrik 1809-10-13 vid konungens eget värvade regemente. Löjtnant vid konungens eget värvade regemente 1814-10-07. Avsked med tillstånd att kvarstå i armén 1819-03-27. Tullfiskal i rikets södra distrikt (KrAB:) 1825-01-18. Tullinspektor i Kristinehamn (KrAB) 1825-04-02. Död 1837-08-07 i Kristinehamn. Gift 1829-05-10 på Lyrestads gård i Lyrestads socken, Skaraborgs län med Christina Andersdotter, född 1804-11-15, död 1890-11-25 på Lyrestad, dotter av Anders Eriksson i Sörgården Hallsås i Lerums socken, Älvsborgs län och Annika Jonsdotter.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 4 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 4 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Axel Johan August, född 1830-01-04. Bosatte sig i Norra Amerika. Död omkring 1890.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #2CA25F; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.">Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Gustaf (översiktstab. 4, son av Carl Johan, Tab. 3), född 1798-01-14. Kvartermästare vid skånska dragonregementet 1809-08-16. Sergeant vid Vendes artilleriregemente 1816-03-28. Fänrik vid Smålands grenadjärbataljon 1820-06-24. Officersexamen 1821-02-28. Löjtnant vid sistnämnda regemente 1826-03-22. Avsked 1832-01-20. Underjägare vid Böda kronopark å Öland. Död 1850-04-10. Gift 1827-09-12 Earyd med friherrinnan Carolina Christina Sparre, född 1803-09-18 Håringe, död 1874-01-19 Hornsberg, dotter av kaptenen friherre Henrik Georg Sparre, nr 11, och Vilhelmina Mariana von Norrman.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Aurora Lovisa Charlotta Ulrika (Ulla), född 1828-02-10 på Earyd, död 1915-01-10 i Säters församling, Skaraborgs län (db) (EÄ på Liden vid Skövde). Gift 1855-08-12 på Hjälmsäter i Örtomta socken, Östergötlands län med majoren friherre Johan Vilhelm Fägerskiöld, nr 97, född 1826, död 1911.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Carl Gustaf Georg, född 1830. Furir. Död 1900. Se Tab. 6.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Gustava Fredrika Carolina, född 1832-12-29, död ogift 1911-12-19 i Tryserums församling, Kalmar län (db) (EÄ på Hornsberg).</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Johan Axel Casimir, född 1835-03-23. Bosatte sig i Amerika. Död omkring 1880.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Sofia Elisabet (Elise), född 1845-06-24 på Håckenstad i Västra Eds socken, Kalmar län. Död 1937-03-19 i Uppsala domkyrkoförsamling (db nr 117) och begraven i Ekeby församling, Skaraborgs län (db 4 eller 7). Gift 1864-09-25 på Västergården i Härja socken, Skaraborgs län med kyrkoherden i Ekeby pastorat av Skara stift Johan Christoffer Svenander'' i hans 2:a gifte (gift 1:o 1849 med Carolina Ahlgren, född 1821, död 1859, dotter av färgerifabrikören Johan Ahlgren och C. Dahlstedt), född 1819-05-10 i Valstads socken, Skaraborgs län, död 1877-08-03 i Ekeby socken, Skaraborgs län.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Henrik Vilhelm, född 1849-07-04. Bosatte sig i S: t Louis i Norra Amerika. Se TAB 6B</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Carl Gustaf Georg (översiktstab. 4, son av Gustaf, Tab. 5), född 1830-05-29. Deltog såsom frivillig i danska kriget 1848–49, varunder han 1849-07-07 befordrades till underofficer vid 5. linjeinfanteribataljonen. Erhöll 1849-08-19 avsked ur dansk tjänst. Furir vid 1. livgrenadjärregementet 1849-11-30. Avsked 1861-08-07. Erhöll Fredericiamedaljen i silver samt stora och lilla danska fälttågsmedaljen i brons. Var senare en tid inspektor vid Sörby egendom i Örtomta socken. Död 1900-06-25 i Norrköping. Gift 1858-04-05 i Stockholm med Hildegard Aurora Molander, född 1827-05-09 i Stockholm, död 1902-04-27 i Norrköping, dotter av kaptenen Sixten Molander.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Erik Sixten, född 1858. Se Tab. 7.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 5 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Edvin Sigismund, född 1859-08-23 död 1860-09-26.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #2CA25F; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbielke nr 1675 - TAB 6 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.">Adlerbielke nr 1675 - TAB 6 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbielke nr 1675 - TAB 6 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Carl Gustaf Georg (översiktstab. 4, son av Gustaf, Tab. 5), född 1830-05-29. Deltog såsom frivillig i danska kriget 1848–49, varunder han 1849-07-07 befordrades till underofficer vid 5. linjeinfanteribataljonen. Erhöll 1849-08-19 avsked ur dansk tjänst. Furir vid 1. livgrenadjärregementet 1849-11-30. Avsked 1861-08-07. Erhöll Fredericiamedaljen i silver samt stora och lilla danska fälttågsmedaljen i brons. Var senare en tid inspektor vid Sörby egendom i Örtomta socken. Död 1900-06-25 i Norrköping. Gift 1858-04-05 i Stockholm med Hildegard Aurora Molander, född 1827-05-09 i Stockholm, död 1902-04-27 i Norrköping, dotter av kaptenen Sixten Molander.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Erik Sixten, född 1858. Se Tab. 7.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Edvin Sigismund, född 1859-08-23 död 1860-09-26.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #2CA25F; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.">Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Henrik Vilhelm (översiktstab. 4, son av Gustaf tab. 5). Född 1849-07-04. Bosatte sig i S:t Louis i Norra Amerika. Död 1892-07-19 i Dassel, Minnesota och begraven i Dassel, Minnesota. Gift 1872-08-16 i Duluth, Minnesota med Emma Carolina Peterson, född 1853-07-22 i Sverige (Åseda, Kronobergs län), död 1909 i Dassel, Minnesota, dotter av Peter Magnus Carlsson.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Nellie Sophia, född 1875-03-01 i Duluth, Minnesota, död 1879-11-22 i Dassel, Minnesota.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Lillie Eva, född 1877-11-19 i Duluth, Minnesota. Död 1924-10-11 i Los Angeles, California. Gift 1895-09-19 i Atwater, Minnesota med Frank E. Andersson från Atwater.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Ammey Louise, född 1881-02-22 Dassel, Minnesota, död 1957-07-22 i St. Louis Park, Minnesota, USA och begraven 1957-08-25. Gift 1899-09-02 i Minneapolis, Minnesota med Frans Larson från Grove City, Minnesota, född 1877-07-30.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Erik Sixten (översiktstab. 4, son av Karl Gustaf Georg, Tab. 6), född 1858-07-17 i Tjällmo socken, Östergötlands län. Volontär vid andra livgrenadjärregementet 1876-03-12. Sergeant vid andra livgrenadjärregementet 1881-03-03. Studentexamen 1883-12-10. Elev vid krigsskolan 1884-07-21. Utexamen 1885-10-05. Underlöjtnant vid nämnda regemente 1885-10-30. Löjtnant 1893-03-11. Kapten 1903-10-30. RSO 1905-12-01. Avsked med skyldighet att kvarstå i regementets reserv 1909-12-31. Avsked ur krigstjänsten 1923. Död 1938-07-10 i Domkyrkoförsamlingen, Linköping (db 206) och utslocknade med honom denna adliga ätt? Se Tab. 7A. Gift 1:o 1887-06-04 i Lund med Anna Emilia (Annie) Olin, skilsmässa genom Linköpings domkapitels skiljebrev 1893-03-22 (EÄ från vilken han blev skild 1803-03-23), i hennes 1:a gifte (gift 2:o i Solna prästgård och förs, Stockholms län, med kamreraren Frans Hugo Werdenhoff, nr 833, född 1862-08-30 Hornsberg. Död 1941-03-03 i Norrtälje, jordf i Stockholm), född 1863-07-31 i Lund. Död 1915-02-24 i Stockholm. Dotter av grosshandlaren Nils Gustaf Edvard Olin och Emma Ohrman. Gift 2:o 1896-10-16 i Kettilstads socken, Östergötlands län med Hildur Emilia Beckman, född 1868-06-19 i Kettilstads socken, död 1957-12-12 i Oscars församling, Stockholm (db), dotter av godsägaren Carl Johan Beckman och Ida Matilda Wibeck.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">1. Annie Elsa Elisabet Eriksdotter, född 1888-02-06 i Ledbergs socken, Östergötlands län. Stiftsjungfru. Död 1962-08-12 i Linköpings domkyrkoförsamling (db). Gift 1913-06-14 i Linköping med arkitekten, RVO, Axel Viktor Brunskog, född 1878-07-31 i Stockholm, död 1946-04-10 i Linköpings domkyrkoförsamling (db).</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">1. Jost, född 1892-10-07 i Kristiania (enligt pastor i Gryts förs, Södermanlands län). Se Tab. 7A.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 6 B - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">2. Aina Elisabet Eriksdotter, född 1897-10-30 i Norrköping. Död 1972-08-05 i Västerleds förs, Stockholms län, med henne utslocknade troligen ätten. Gift 1920-10-16 i Linköping med löjtnanten vid andra livgrenadjärregementet Erik Gustaf Hjalmar Almquist i hans 1:a gifte, från vilken hon blev skild 1939-07-17 genom Stockholms RR:s utslag (gift 2:o 1939-08-28 med Brita Elisabeth Hellinger, 46, född 1909-09-20), född 1896-01-11 i Södertälje landsförsamling.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #2CA25F; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbielke nr 1675 - TAB 7 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.">Adlerbielke nr 1675 - TAB 7 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbielke nr 1675 - TAB 7 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Erik Sixten (översiktstab. 4, son av Karl Gustaf Georg, Tab. 6), född 1858-07-17 i Tjällmo socken, Östergötlands län. Volontär vid andra livgrenadjärregementet 1876-03-12. Sergeant vid andra livgrenadjärregementet 1881-03-03. Studentexamen 1883-12-10. Elev vid krigsskolan 1884-07-21. Utexamen 1885-10-05. Underlöjtnant vid nämnda regemente 1885-10-30. Löjtnant 1893-03-11. Kapten 1903-10-30. RSO 1905-12-01. Avsked med skyldighet att kvarstå i regementets reserv 1909-12-31. Avsked ur krigstjänsten 1923. Död 1938-07-10 i Domkyrkoförsamlingen, Linköping (db 206) och utslocknade med honom denna adliga ätt? Se Tab. 7A. Gift 1:o 1887-06-04 i Lund med Anna Emilia (Annie) Olin, skilsmässa genom Linköpings domkapitels skiljebrev 1893-03-22 (EÄ från vilken han blev skild 1803-03-23), i hennes 1:a gifte (gift 2:o i Solna prästgård och förs, Stockholms län, med kamreraren Frans Hugo Werdenhoff, nr 833, född 1862-08-30 Hornsberg. Död 1941-03-03 i Norrtälje, jordf i Stockholm), född 1863-07-31 i Lund. Död 1915-02-24 i Stockholm. Dotter av grosshandlaren Nils Gustaf Edvard Olin och Emma Ohrman. Gift 2:o 1896-10-16 i Kettilstads socken, Östergötlands län med Hildur Emilia Beckman, född 1868-06-19 i Kettilstads socken, död 1957-12-12 i Oscars församling, Stockholm (db), dotter av godsägaren Carl Johan Beckman och Ida Matilda Wibeck.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 7 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 7 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">1. Annie Elsa Elisabet Eriksdotter, född 1888-02-06 i Ledbergs socken, Östergötlands län. Stiftsjungfru. Död 1962-08-12 i Linköpings domkyrkoförsamling (db). Gift 1913-06-14 i Linköping med arkitekten, RVO, Axel Viktor Brunskog, född 1878-07-31 i Stockholm, död 1946-04-10 i Linköpings domkyrkoförsamling (db).</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 7 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">1. Jost, född 1892-10-07 i Kristiania (enligt pastor i Gryts förs, Södermanlands län). Se Tab. 7A.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 7 - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">2. Aina Elisabet Eriksdotter, född 1897-10-30 i Norrköping. Död 1972-08-05 i Västerleds förs, Stockholms län, med henne utslocknade troligen ätten. Gift 1920-10-16 i Linköping med löjtnanten vid andra livgrenadjärregementet Erik Gustaf Hjalmar Almquist i hans 1:a gifte, från vilken hon blev skild 1939-07-17 genom Stockholms RR:s utslag (gift 2:o 1939-08-28 med Brita Elisabeth Hellinger, 46, född 1909-09-20), född 1896-01-11 i Södertälje landsförsamling.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #2CA25F; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbielke nr 1675 - TAB 7A - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.">Adlerbielke nr 1675 - TAB 7A - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbielke nr 1675 - TAB 7A - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Jost (översiktstab. 4, son av Erik Sixten tab. 7). född 1892-10-07 i Kristiania (enligt pastor i Gryts förs, Södermanlands län). Försvunnen i USA. Bankkamrer, affärsman (Trenton, NJ, USA). Gift 1918-11-30 i Hedvig Eleonora förs, Stockholm med Ingrid (Inga) Minne Leontine Köhler, från vilken han blev skild 1929, född 1895-02-03 i Hedvig Eleonora förs, Stockholm. Dotter av kanslirådet Sven Köhler och hans hustru Emmy, född Welin.</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 7A - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbielke nr 1675 - TAB 7A - Adlad 1719-10-20, introducerad 1720. Utdöd 1948-12-07.  value" class="gt_row gt_left">Jost Rutger Jostson, född 1920-02-07 i Hedvig Eleonora församling, Stockholm (fb). Studentexamen vid Högre allmänna läroverket å Östermalm, Stockholm våren 1938. Stud. vid Handelshögskolan i Stockholm. Död 1948-12-07 i Oscars förs, Stockholm (db nr 368), med honom utslocknade troligen adliga ätten Adlerbielke, nr 1675. Gift 1948-05-28 i Oscars förs, Stockholm (vb nr 231) med Ella Marianne Sandström, född 1924-07-02 i Lunds domkyrkoförs (gift 2:o 1950 i Paris med konstnären Milton Goldring från Amerika). Dotter av läroverksadjunkten Gunnar Erik Israel Sandström o h h distriktstandläkare Inga Ragnhild Malmros.</td></tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="1">Source: <a href="https://www.adelsvapen.com/genealogi/Adlerbielke_nr_1675">click here for family page</a></td>
+    </tr>
+  </tfoot>
+  
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="isdnqkgulo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#isdnqkgulo) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#isdnqkgulo) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#isdnqkgulo) .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+:where(#isdnqkgulo) .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#isdnqkgulo) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#isdnqkgulo) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#isdnqkgulo) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#isdnqkgulo) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#isdnqkgulo) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#isdnqkgulo) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#isdnqkgulo) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#isdnqkgulo) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#isdnqkgulo) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+:where(#isdnqkgulo) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#isdnqkgulo) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#isdnqkgulo) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#isdnqkgulo) .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#isdnqkgulo) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#isdnqkgulo) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#isdnqkgulo) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#isdnqkgulo) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#isdnqkgulo) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#isdnqkgulo) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#isdnqkgulo) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#isdnqkgulo) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#isdnqkgulo) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#isdnqkgulo) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#isdnqkgulo) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#isdnqkgulo) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#isdnqkgulo) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#isdnqkgulo) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#isdnqkgulo) .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#isdnqkgulo) .gt_left {
+  text-align: left;
+}
+
+:where(#isdnqkgulo) .gt_center {
+  text-align: center;
+}
+
+:where(#isdnqkgulo) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#isdnqkgulo) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#isdnqkgulo) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#isdnqkgulo) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#isdnqkgulo) .gt_super {
+  font-size: 65%;
+}
+
+:where(#isdnqkgulo) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#isdnqkgulo) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#isdnqkgulo) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#isdnqkgulo) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#isdnqkgulo) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#isdnqkgulo) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#isdnqkgulo) .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="1" class="gt_heading gt_title gt_font_normal" style=""><strong>Example of Adelsvapen family data</strong></td>
+    </tr>
+    <tr>
+      <td colspan="1" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Adlerbrandt nr 2034</td>
+    </tr>
+  </thead>
+  
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #8856A7; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.">Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Lars Månsson, borgare i Norrköping. Begraven 1654-02-24, i Norrköping. (Öä XIII s. 70 not. 11) Gift med Kristin.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Göran Branting, döpt 1646-03-27 i Norrköping (Öä XIII s. 70 not. 11). Regementsskrivare vid Smålands kavalleri. Bodde Orraryd. Död 1694 och begraven i Nöbbeleds kyrka 1694-06-24. Gift 167(3) med Catharina Amundsdotter Pavonia (Öä), född 1651, död 1723-01-13 och begraven i Nöbbeleds kyrka 1723-02-03.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Gabriel Branting, född 1682-09-04. Vice auditör vid Smålands kavalleriregemente 1698. Kronofogde i Konga och Uppvidinge härader 1706. Proviantmästare vid fältmarskalken Stenbocks armé 1709. Landskamrerare i Växjö 1720. Avsked med assessors karaktär 1734-02-22. Död 1746-03-12. på Orraryd Knipan. Han erhöll 1734-04-24 konung Fredriks (försäkran om adelskap. Gift 1707-01-30 med Sara Gahm, född 1690-09-08, död 1763-04-06 på Orraryd, dotter av kronobefallningsmannen Sigfrid Gahm, de stiftade 1726 ett stipendium vid Växjö gymnasium.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Sigfrid Branting, adlad Adlerbrant, född 1714. Student (Lsn.)1732-08-25. Auskultant i Göta hovrätt 1737. Vice häradshövding. Hovsekreterares n. h. o. v. 1745. Överjägmästare i Småland 1747-10-02. Adlad (Koncept till sköldebrevet i RA.) 1756-10-12 (sonen introducerad 1776 under nr 2034). Överjägmästare i Jönköpings, Kronobergs och Blekinge län (Sj.) 1759-09-11. Död 1760-07-26 på sin egendom Orraryd och begraven i Nöbbeleds kyrka. Gift 1748-02-02 Stenshohn med Anna Christina Qveckfeldt, född Stenshohn 1723-05-14, död 1800-07-05 i Växjö, dotter av generallöjtnanten Erik Gustaf Qveckfeldt. nr 979, och Birgitta Margareta Hammarfelt, nr 1435.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Gabriel, född 1748. Se Tab. 2.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Erik Gustaf, född 1750, död 1750-06-26 på Orraryd.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Brita Margareta, född 1751 på Orraryd. Ddöd på Orraryd 1803-06-18. Gift 1:o 1774-12-27 med hovrättsrådet Zakarias Kniberg, adlad Stiernecreutz, nr 2143, från vilken hon 1775-04-19 blev skild, född 1739, död 1814. Gift 2:o 1776-11-22 Västorp med jägmästaren Teodor Christoffer Ahlberg, döpt 1733-09-11 i Kristianstad, död 1792-03-03 på Västorp.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Sara Gustaviana, född 1753-05-19 på Orraryd. Död 1783-10-16 Grimsgöl. Gift 1779-04-18 i Nöbbeleds kyrka med kaptenen Carl Rikard Stenfelt, nr 1867, i hans 1:a gifte, född 1736, död 1810.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Fredrika Lovisa, född 1754-09-12, död 1754-12-18 på Orraryd.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Elisabet Juliana, född 1755-10-15 på Orraryd, död ogift 1821-08-31 i Växjö.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Maria Beata, född 1757-01-13 på Orraryd, död på Orraryd 1757-08-30.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 1 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Carolina Fredrika, född 1759-02-07 på Orraryd, död 1835-10-21 i Växjö. Gift 1780-03-03 på Orraryd med krigsrådet friherre Anders Otto Fredrik von Rosen, nr 290, född 1750, död 1818.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #8856A7; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbrandt nr 2034 - TAB 2 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.">Adlerbrandt nr 2034 - TAB 2 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbrandt nr 2034 - TAB 2 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Gabriel (son av Sigfrid Branting, adlad Adlerbrant, Tab. 1), född 1748-12-08 på Orraryd. Auskultant i Göta hovrätt 1765-10-05. Extra ordinarie notarie i Göta hovrätt 1768-11-06. Kanslist 1769-05-06. Notarie 1773-04-28. Förordnad till domare 1774-11-02. Häradshövding i Tveta och Mo härader 1780-03-15. Assessor i Göta hovrätt hovrätt 1786-10-06. Hovrättsråd 1796-02-12. RNO 1801-05-28. Avsked 1819-04-22. Död 1820-01-19 i Jönköping. Gift 1773-10-12 med Fredrika Sofia Lundeberg i hennes 2:a gifte (gift 1:o med notarien i Göta hovrätt, vice häradshövdingen Anders Ture Eneroth (Ogh.), född 1734-10-28 död 1771-07-25), född 1744-10-28, död 1803-02-20 på Trånghalla i Bankeryds socken, Jönköpings län, dotter av hovrättsrådet Anders Lundeberg och Helena Sofia Falk.</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 2 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbrandt nr 2034 - TAB 2 - Adlad 1756-10-12, introducerad 1776. Utdöd 1853-05-04. Utgör en gren av den ännu levande släkten Branting.  value" class="gt_row gt_left">Ture Gabriel, född 1780-05-05 Djuvarp. Korpral vid Smålands kavalleriregemente 1785-10-27. Student i Lund (Lsn.)1793-05-04. Auskultant i Göta hovrätt 1796-05-26. Extra ordinarie notarie 1796. Vice aktuarie 1800-02-27. Extra notarie vid civilprotokollet 1801-0729. Extra ordinarie kanslist i justitierevisionsexpditionen 1802-09-09. Kunglig fullmakt å häradshövdings n. h. o. v. med tur och befordringsrätt 1807-07-11. Adjungerad ledamot i Göta hovrätt (Ogh.) 1808-07-20. Assessor i Svea hovrätt 1810-05-07. Hovrättsråd 1826-05-11. Avsked 1837-05-23. Död ogift 1853-05-04 i Jönköping och slöt ätten.</td></tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="1">Source: <a href="https://www.adelsvapen.com/genealogi/Adlerbrandt_nr_2034">click here for family page</a></td>
+    </tr>
+  </tfoot>
+  
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="jmgiijwugu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#jmgiijwugu) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#jmgiijwugu) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#jmgiijwugu) .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+:where(#jmgiijwugu) .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#jmgiijwugu) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#jmgiijwugu) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#jmgiijwugu) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#jmgiijwugu) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#jmgiijwugu) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#jmgiijwugu) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#jmgiijwugu) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#jmgiijwugu) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#jmgiijwugu) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+:where(#jmgiijwugu) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#jmgiijwugu) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#jmgiijwugu) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#jmgiijwugu) .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#jmgiijwugu) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#jmgiijwugu) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#jmgiijwugu) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#jmgiijwugu) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#jmgiijwugu) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#jmgiijwugu) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#jmgiijwugu) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#jmgiijwugu) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#jmgiijwugu) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#jmgiijwugu) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#jmgiijwugu) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#jmgiijwugu) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#jmgiijwugu) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#jmgiijwugu) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#jmgiijwugu) .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#jmgiijwugu) .gt_left {
+  text-align: left;
+}
+
+:where(#jmgiijwugu) .gt_center {
+  text-align: center;
+}
+
+:where(#jmgiijwugu) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#jmgiijwugu) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#jmgiijwugu) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#jmgiijwugu) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#jmgiijwugu) .gt_super {
+  font-size: 65%;
+}
+
+:where(#jmgiijwugu) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#jmgiijwugu) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#jmgiijwugu) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#jmgiijwugu) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#jmgiijwugu) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#jmgiijwugu) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#jmgiijwugu) .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="1" class="gt_heading gt_title gt_font_normal" style=""><strong>Example of Adelsvapen family data</strong></td>
+    </tr>
+    <tr>
+      <td colspan="1" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="">Adlerbeth nr 1732</td>
+    </tr>
+  </thead>
+  
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #E34A33; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbeth nr 1732 - TAB 1 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.">Adlerbeth nr 1732 - TAB 1 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbeth nr 1732 - TAB 1 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Per Beth, bondson från hemmanet Beet i Bottnaryds socken Jönköpings län, varav namnet antogs. Levde på 1600-talet och var länsman i Småland.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 1 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 1 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Tore Beth, råd- och handelsman i Jönköping. Död 1703. Gift med Märta Mikaelsdotter Gottske, född 1620, död 1705.(At (Sch).)</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 1 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 1 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Petrus Teodori Beth, född 1647-07-09 i Jönköping. Student i Uppsala (Lsn) 16?8-01-29. Magister i Wittenberg 1673-10-14. Prästvigd 1673-12-21 och 1673-12-21 konrektor vid Jönköpings skola samt slottspredikant. Kyrkoherde i Barnarps pastorat av Växjö stift 1681. Kyrkoherde i Villstads pastorat Växjö stift 1694 i okt.. Död 1719-09-14 och begraven i Villstads kyrka, där hans epitalium uppsattes. Gift 1677-05-27 med Helena Lindelia, född 1652-05-15, död 1718-01-19, dotter av prosten och kyrkoherden i Långaryds pastorat av Växjö stift mag. Ambern Lindelius.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 1 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 1 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Samuel Beth, adlad Adlerbeth, född 1685. Se Tab. 2</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 1 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Gudmund Beth, adlad Adlerbeth, född. 1687. Se Tab. 3</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #E34A33; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbeth nr 1732 - TAB 2 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.">Adlerbeth nr 1732 - TAB 2 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbeth nr 1732 - TAB 2 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Samuel Beth, adlad Adlerbeth (son av Petrus Teodori Beth, Tab. 1), döpt 1685-11-15 i Jönköping (Jönköpings stads kyrkoarkiv). Volontär vid Jönköpings regemente 1704-05-00. Korpral vid Jönköpings regemente 1705-12-20. Förare 1706-10-13. Fältväbel 1709-06-27. Fången 1709-07-01 vid Perevolotjna men rymde ur fångenskapen och återkom till Preussen 1711, där han blev fältväbel vid general Crispins trupper. Kom till Sverige i 1712-10-00. Kaptenlöjtnant vid Smålands tremänningsinfanteriregemente 1713-08-06. Konfirmationsfullmakt 1716-12-14. Kapten vid Smålands tremänningsinfanteriregemente 1717-10-25. Avsked 1719-07-00. Adlad, jämte yngre brodern Gudmund, 1720-03-21 (introducerad 1720 under nr 1732, men i ordningen efter honom). Död 1734-05-28 på Kävset i Villstads socken Jönköpings län och begraven 1734-06-05 [Lk], Gift 1719 med Dorotea N. N., som var ifrån Kurland, och levde ännu 1738. (At (L.))</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 2 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 2 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Samuel, född 1720. Korpral vid Smålands kavalleriregemente. Kvartermästare. Död ogift 1744-03-15 i Jönköping, och slöt således denna ättegren.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 2 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Helena, född 1723. Död 1752-12-03, i Jönköpings slottsförsamling. Gift 1749-08-30 Ramsjöholm med kyrkoherden i Barnarps pastorat av Växjö stift mag. Isak Svanstedt, född 1710, död 1765-05-07.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #E34A33; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbeth nr 1732 - TAB 3 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.">Adlerbeth nr 1732 - TAB 3 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbeth nr 1732 - TAB 3 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Gudmund Beth, adlad Adlerbeth (son av Petrus Teodori Beth, Tab. 1), till Ramsjöholm i Svarttorps socken Jönköpings län, som han 1748 fick av en sin äldre broder, majoren Ambjörn Beth, till fideikommiss för sig och sina manliga avkomlingar. Född. 1687-05-24 i Jönköping. Student i Uppsala (Um.) 1705-09-02. Auskultant i Svea hovrätt 1709. Notarie vid livgardet 1710-06-20. Auditör vid livgardet och justitiarie vid amiralitetsrätten i Stockholm 1711-09-14. Konfirmationfullmakt. (KrAB.) 1716-01-03. Assessor i Åbo hovrätt 1718-09-06. Adlad, jämte sin äldre broder Samuel, 1720-03-21 (introducerad 1720 under nr 1732, men i ordningen före honom). Assessor i Göta hovrätt 1725-05-14. Hovrättsråd i Göta hovrätt 1733-05-05. RNO 1751-12-04. Vice president 1752-05-07. Död 1753-05-30 i Jönköping. Gift 1718 med Hedvig Margareta Below, född 1697, död 1764-07-16 Ekhov, dotter av fältmedikus, professorn Jakob Fredrik Below och Brita Hult.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 3 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 3 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Jakob Fredrik, född 1719. Se Tab. 4.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 3 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Vibecka Charlotta, född 1722-09-22. Död 1804-12-14 på Ekhov. Gift på Ekhov 1750-06-14 med majoren vid Södermanlands regemente Henrik Johan von Fuhrman, född 1721-12-10 Björkeby, död 1783-05-09 på sin egendom Horn i Enhörna socken i Södermanlands län.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 3 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Brita Helena, född 1724-02-01, död 1787-12-15 Jakobsberg Gift 1762-04-15 på Ekhov med hovstallmästaren Jakob Wattrang, född 1720, död 1788.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 3 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Hedvig Margareta, född 1725, död 1737-02-12 på Ekhov.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 3 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Peter Ambjörn, född 1726-01-16, död 1726-04-24.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 3 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Gudmund, född 1731-01-30 på Ekhov, död 1731.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 3 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Carl Ulrik, född 1737-02-18, död 1738-09-07 på Ekhov.</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="1" class="gt_group_heading" style="background-color: #E34A33; color: #FFFFFF; font-style: italic;" scope="col" id="Adlerbeth nr 1732 - TAB 4 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.">Adlerbeth nr 1732 - TAB 4 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.</th>
+    </tr>
+    <tr class="gt_row_group_first"><td headers="Adlerbeth nr 1732 - TAB 4 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Jakob Fredrik (son av Gudmund Beth, adlad Adlerbeth, Tab. 3), till Ramsjöholm. Född 1719-05-17 i Stockholm. Student i Uppsala (Um) 1734-03-02. Auskultant i Göta hovrätt 1740. Kanslist i Göta hovrätt 1742. Hovjunkare 1746. Notarie 1747-02-17. Assessors avsked 1754-05-03. Död 1778-07-01 på Ramsjöholm. Gift 1750-08-23 i Norrköping med Anna Maria Spalding född 1714 i 1714-02-00., död 1802-12-06, dotter av brukspatronen Georg Spalding på Gusum och Sofia Christoffersson (vars brorsbarn adlades Adlersparre) samt syster till lagmannen Gustaf Spalding, adlad Spaldencreutz.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 4 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Barn:</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 4 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Gudmund Göran, friherre Adlerbeth, född 1751. Död 1818 Se adliga och friherrlig ätterna Adlerbeth nr 329.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 4 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Sofia Margareta, född 1752-12-17, död ogift 1831-04-07 i Jönköping.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 4 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Hedvig Maria, född 1754-12-17, död ogift 1830-03-06 i Jönköping.</td></tr>
+    <tr><td headers="Adlerbeth nr 1732 - TAB 4 - Adlad 1720-03-21, introducerad 1720. Ättens siste manlige medlem upphöjd i friherrlig värdighet 1808-09-12.  value" class="gt_row gt_left">Adolf Fredrik, född 1756-02-01 på Ramsjöholm. Kom i tjänst 1770-09-14. Underofficer 1772-05-17. Sekundadjutant vid konungens eget värvade regemente 1772-09-25. Stabsfänrik vid konungens eget värvade regemente 1773-02-15. Löjtnant 1776-10-08. Löjtnant vid Jönköpings regemente 1780-06-07. Stabskapten vid Jönköpings regemente 1781-12-05. Major i armén 1786-12-14. RSO 1797-11-01. Avsked 1801-06-16. Död ogift 1808-09-12 i Stockholm och utgick med honom adliga ätten Adlerbeth, B.</td></tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="1">Source: <a href="https://www.adelsvapen.com/genealogi/Adlerbeth_nr_1732">click here for family page</a></td>
+    </tr>
+  </tfoot>
+  
+</table>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

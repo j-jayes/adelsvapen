@@ -10,20 +10,12 @@ execute:
 
 Scraper of [Adelsvapen](https://www.adelsvapen.com/genealogi/Huvudsida) genealogy website for noble families of Sweden.
 
-## Output
-
-```{r}
-knitr::include_url()
-```
-
-
-
 ## Planning
 
 This is what the website looks like:
 
 ```{r}
-knitr::include_graphics("images/home-page.PNG")
+knitr::include_graphics(here::here("images/home-page.PNG"))
 ```
 
 And these are the pages with the information that we want to get, including:
@@ -36,7 +28,7 @@ And these are the pages with the information that we want to get, including:
 Ideally we would want to process this text in such way to keep the bolded names, and extract birth places and dates.
 
 ```{r}
-knitr::include_graphics("images/abrahamsson.PNG")
+knitr::include_graphics(here::here("images/abrahamsson.PNG"))
 ```
 
 ### Robots.txt
@@ -52,8 +44,8 @@ robots.txt is a standard used by websites to indicate to visiting web crawlers a
 They have an extensive list of bots they do not allow, but do not forbid us from scraping the `/genealogi` subsection. So as long as we use a good wait time between hits so as not to overwhelm their server, we will be okay!
 
 ```{r}
-knitr::include_graphics("images/robots-top.PNG")
-knitr::include_graphics("images/robots.PNG")
+knitr::include_graphics(here::here("images/robots-top.PNG"))
+knitr::include_graphics(here::here("images/robots.PNG"))
 ```
 
 ### Starting point
@@ -93,7 +85,7 @@ noble_families %>%
 Next we want to scrape the links to the branches of family trees for each family. They look like this:
 
 ```{r}
-knitr::include_graphics("images/branches.PNG")
+knitr::include_graphics(here::here("images/branches.PNG"))
 ```
 
 Ideally we would loop through the list and keep a record of each branch of the family tree with a link to it.

@@ -1,0 +1,563 @@
+---
+title: "Scraper"
+format: html
+---
+
+## Purpose
+
+Working on scraper
+
+### Planning
+
+`htmlchild()` to preserve structure?
+
+### Getting going
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+### Tabs type with divs and tables
+
+```{r}
+url <- "https://www.adelsvapen.com/genealogi/Adelborg_nr_2090"
+
+html <- read_html(url)
+
+title <- html %>%
+  html_nodes(".title") %>%
+  html_text() 
+
+family_info <- html %>%
+  html_nodes(xpath = "//h2[contains(., 'TAB')]/following-sibling::div") %>%
+  html_text() %>%
+  as_tibble() %>%
+  rename(tab = value) %>%
+  mutate(tab_number = row_number()) %>%
+  separate_rows(tab, sep = "\n") %>%
+  mutate(is_next_tab = str_extract(tab, "^TAB [0-9]+")) %>%
+  group_by(tab_number) %>%
+  fill(is_next_tab) %>% view()
+  ungroup() %>%
+  filter(
+    is.na(is_next_tab),
+    tab != "Barn:",
+    tab != ""
+  ) %>%
+  select(-is_next_tab) %>%
+  mutate(tab = str_squish(tab))
+
+bio <- html %>%
+  html_nodes("p") %>%
+  html_text() %>%
+  str_squish() %>%
+  as_tibble() %>%
+  rename(info = value) %>%
+  filter(
+    str_detect(info, "\\d\\d\\d\\d"),
+    str_detect(info, regex("introducerad|utdöd|adlad", ignore_case = T))
+  )
+
+children <- family_info %>%
+  slice(-1) %>%
+  rename(children_bio = tab) %>%
+  filter(str_detect(children_bio, "\\d\\d\\d\\d")) %>%
+  nest(children = everything())
+
+
+tibble(title, bio, children)
+```
+
+### Tabs type with p tags
+
+```{r}
+url <- "https://www.adelsvapen.com/genealogi/Adelheim_nr_1886"
+
+html <- read_html(url)
+
+title <- html %>%
+  html_nodes(".title") %>%
+  html_text()
+
+family_info <- html %>%
+  html_nodes(xpath = "//h2[contains(., 'TAB')]/following-sibling::p") %>%
+  html_text() %>%
+  as_tibble() %>%
+  rename(tab = value) %>%
+  mutate(tab = str_squish(tab)) %>% 
+  filter(tab != "Barn:") %>% 
+  mutate(tab_number = row_number()) %>%
+  filter(
+    tab != "Barn:",
+    tab != ""
+  ) %>%
+  mutate(tab = str_squish(tab))
+
+bio <- html %>%
+  html_nodes("p") %>%
+  html_text() %>%
+  str_squish() %>%
+  as_tibble() %>%
+  rename(info = value) %>%
+  filter(
+    str_detect(info, "\\d\\d\\d\\d"),
+    str_detect(info, regex("introducerad|utdöd|adlad", ignore_case = T))
+  )
+
+children <- family_info %>%
+  rename(children_bio = tab) %>%
+  filter(str_detect(children_bio, "\\d\\d\\d\\d")) %>%
+  nest(children = everything())
+
+
+tibble(title, bio, children) %>% 
+  unnest(bio) %>% 
+  unnest(children) %>% view()
+```
+
+
+No tabs
+
+```{r}
+get_info_from_family_no_tabs <- function(url_in) {
+  html <- read_html(url_in)
+
+  fam_abb <- str_remove(url_in, "https://www.adelsvapen.com/genealogi/")
+
+  title <- html %>%
+    html_nodes(".title") %>%
+    html_text()
+
+  bio <- html %>%
+    html_nodes("p") %>%
+    html_text() %>%
+    str_squish() %>%
+    as_tibble() %>%
+    rename(info = value) %>%
+    filter(str_detect(info, "\\d\\d\\d\\d")) %>%
+    nest(bio = everything())
+
+  children <- html %>%
+    html_nodes("ul") %>%
+    html_text() %>%
+    str_squish() %>%
+    as_tibble() %>%
+    rename(children_bio = value) %>%
+    filter(str_detect(children_bio, "\\d\\d\\d\\d")) %>%
+    # mutate(tab = 1) %>% 
+    nest(children = everything())
+
+  # image
+  # img_src <- html %>%
+  #   html_node(".image") %>%
+  #   html_elements("img") %>%
+  #   html_attr("src")
+  # 
+  # img_url <- img_src %>% str_c("https://www.adelsvapen.com", .)
+  # 
+  # download.file(img_url, destfile = here::here(glue::glue("scraped_images/{fam_abb}.jpg")), mode = "wb")
+
+  return(tibble(title, bio, children))
+}
+
+```
+
+
+
+
+### Dev
+
+```{r}
+url <- "https://www.adelsvapen.com/genealogi/Adelcrantz_nr_274"
+
+html <- read_html(url)
+
+title <- html %>%
+  html_nodes(".title") %>%
+  html_text() 
+
+family_info <- html %>%
+  # /following-sibling::p
+  html_nodes(xpath = "//h2[contains(., 'TAB')]/following-sibling::p") %>%
+  html_text() %>%
+  as_tibble() %>%
+  rename(tab = value) %>%
+  mutate(tab_number = row_number()) %>%
+  separate_rows(tab, sep = "\n") %>%
+  mutate(is_next_tab = str_extract(tab, "^TAB [0-9]+")) %>%
+  group_by(tab_number) %>%
+  fill(is_next_tab) %>% 
+  ungroup() %>%
+  filter(
+    is.na(is_next_tab),
+    tab != "Barn:",
+    tab != ""
+  ) %>%
+  select(-is_next_tab) %>%
+  mutate(tab = str_squish(tab))
+
+bio <- html %>%
+  html_nodes("p") %>%
+  html_text() %>%
+  str_squish() %>%
+  as_tibble() %>%
+  rename(info = value) %>%
+  filter(
+    str_detect(info, "\\d\\d\\d\\d"),
+    str_detect(info, regex("introducerad|utdöd|adlad", ignore_case = T))
+  )
+
+children <- family_info %>%
+  slice(-1) %>%
+  rename(children_bio = tab) %>%
+  filter(str_detect(children_bio, "\\d\\d\\d\\d")) %>%
+  nest(children = everything())
+
+
+tibble(title, bio, children)
+```
+
+
+
+```{r}
+html %>%
+  # /following-sibling::p
+  html_nodes(xpath = "//h2[contains(., 'TAB')]/following-sibling::p") %>%
+  html_text()
+
+html %>%
+  # /following-sibling::p
+  html_nodes(xpath = "//h2[contains(., 'TAB')]/following-sibling::p") %>%
+  html_text()
+```
+
+
+New plan for the scraping function,
+
+first get the number of tabs, then get information from each tab, then look for the first line with established, and remove the rest.
+
+
+```{r}
+# here is the url
+url <- "https://www.adelsvapen.com/genealogi/Adelcrantz_nr_274"
+
+url <- "https://www.adelsvapen.com/genealogi/Andeflycht_nr_312"
+
+url <- "https://www.adelsvapen.com/genealogi/Gyllenkrok_nr_195"
+
+
+get_family_information_from_page <- function(url_in) {
+  message("Getting info from ", url_in)
+  # get the html of the page
+  html <- read_html(url)
+
+  # get page title
+  title <- html %>%
+    html_nodes("h1") %>%
+    html_text()
+
+  # get the family origin
+  family_origin <- html %>%
+    html_nodes("p") %>%
+    html_text2() %>%
+    as_tibble() %>%
+    rename(family_info = value) %>%
+    filter(
+      str_detect(family_info, regex("\\d\\d\\d\\d")),
+      str_detect(family_info, regex("Introd|Adlad|Utdöd", ignore_case = TRUE))
+    ) %>%
+    slice(1) %>%
+    pull()
+
+  # get the source of the information
+  source <- html %>%
+    html_node(xpath = "//h2[contains(., 'Källor')]/following-sibling::*[self::p or self::ul]") %>%
+    html_text2()
+
+  # For no tabs, this gets all of the information
+  family_info <- html %>%
+    html_nodes(xpath = "//h2/following-sibling::*[self::p or self::ul][following-sibling::h2[contains(., 'Källor')]]") %>%
+    html_text2() %>%
+    as_tibble() %>%
+    mutate(value = str_squish(value))
+}
+
+
+# create a tibble of the table names from the headers that are level 2
+tbl_of_tables <- html %>%
+  html_nodes("h2") %>%
+  html_text() %>%
+  as_tibble() %>%
+  rename(h2 = value) %>% 
+  filter(str_detect(h2, regex("TAB \\d+", ignore_case = TRUE)))
+
+# count the number of tables
+number_of_tables <- tbl_of_tables %>% 
+  count() %>%
+  pull()
+
+# Now I want to get the heading level 2 under each table heading to grab the text between these headings:
+tbl_of_tables_with_lead <- tbl_of_tables %>%
+  bind_rows(tibble(h2 = "Källor")) %>%
+  mutate(next_h2 = lead(h2)) %>% 
+  filter(row_number() != n())
+
+get_table_data <- function(h2_in, next_h2_in) {
+  message("Getting data from ", h2_in)
+  html %>%
+    html_nodes(xpath = glue::glue("//h2[contains(., '{h2_in}')]/following-sibling::*[self::p or self::ul][following-sibling::h2[contains(., '{next_h2_in}')]]")) %>%
+    html_text2()
+}
+
+table_info <- tbl_of_tables_with_lead %>%
+  mutate(data = pmap(list(h2, next_h2), possibly(get_table_data, "failed"))) %>%
+  select(-next_h2)
+
+
+
+
+
+# Get info from each table
+html %>%
+  html_nodes(xpath = "//h2[contains(., 'TAB 1')]/following-sibling::*[self::p or self::ul]")
+
+
+html %>%
+  html_nodes(xpath = "//h2[contains(., 'TAB 1')]/following-sibling::*[self::p or self::ul][following-sibling::h2[contains(., 'TAB 2')]]") %>%
+  html_text()
+
+
+
+
+
+
+
+
+
+```
+
+
+Notes::
+
+Sometimes, there isn't a numbering system for the tables that goes from 1 to 2 etc. Sometimes there is, for example, 2A.
+
+
+```{r}
+get_family_information_from_page <- function(url_in) {
+  message("Getting info from ", url_in)
+  # get the html of the page
+  html <- read_html(url_in)
+
+  # get page title
+  title <- html %>%
+    html_nodes("h1") %>%
+    html_text()
+
+  # get the family origin
+  family_origin <- html %>%
+    html_nodes("p") %>%
+    html_text2() %>%
+    as_tibble() %>%
+    rename(family_info = value) %>%
+    filter(
+      str_detect(family_info, regex("\\d\\d\\d\\d")),
+      str_detect(family_info, regex("Introd|Adlad|Utdöd", ignore_case = TRUE))
+    ) %>%
+    slice(1) %>%
+    pull()
+
+  # get the source of the information
+  source <- html %>%
+    html_node(xpath = "//h2[contains(., 'Källor')]/following-sibling::*[self::p or self::ul]") %>%
+    html_text2()
+  
+  # create a tibble of the table names from the headers that are level 2
+  tbl_of_tables <- html %>%
+      html_nodes("h2") %>%
+      html_text() %>%
+      as_tibble() %>%
+      rename(h2 = value) %>% 
+      filter(str_detect(h2, regex("TAB \\d+", ignore_case = TRUE)))
+
+    # count the number of tables
+    number_of_tables <- tbl_of_tables %>% 
+      count() %>%
+      pull()
+
+  # check if there are tables on the page
+  if (number_of_tables != 0) {
+
+    # Now I want to get the heading level 2 under each table heading to grab the text between these headings:
+    tbl_of_tables_with_lead <- tbl_of_tables %>%
+      bind_rows(tibble(h2 = "Källor")) %>%
+      mutate(next_h2 = lead(h2)) %>% 
+      filter(row_number() != n())
+
+    get_table_data <- function(h2_in, next_h2_in) {
+      message("Getting data from ", h2_in)
+      html %>%
+        html_nodes(xpath = glue::glue("//h2[contains(., '{h2_in}')]/following-sibling::*[self::p or self::ul][following-sibling::h2[contains(., '{next_h2_in}')]]")) %>%
+        html_text2()
+    }
+
+    family_info <- tbl_of_tables_with_lead %>%
+      mutate(data = pmap(list(h2, next_h2), possibly(get_table_data, "failed"))) %>%
+      select(-next_h2)
+
+    return(tibble(title = title, family_origin = family_origin, source = source, table_info = table_info))
+
+  } else {
+    # For no tabs, this gets all of the information
+    family_info <- html %>%
+      html_nodes(xpath = "//h2/following-sibling::*[self::p or self::ul][following-sibling::h2[contains(., 'Källor')]]") %>%
+      html_text2() %>%
+      as_tibble() %>%
+      mutate(value = str_squish(value)) %>% 
+      nest(data = everything()) %>% 
+      mutate(h2 = "Tab 0") %>% 
+      relocate(h2, .before = data)
+
+    return(tibble(title = title, family_origin = family_origin, source = source, family_info = family_info))
+  }
+}
+
+test <- get_family_information_from_page("https://www.adelsvapen.com/genealogi/Ridderstolpe_nr_119")
+```
+
+### Big scraping function 
+
+```{r}
+# function to get page title
+get_title <- function(html) {
+  html %>%
+    html_nodes("h1") %>%
+    html_text()
+}
+
+# function to get family origin
+get_family_origin <- function(html) {
+  html %>%
+    html_nodes("p") %>%
+    html_text2() %>%
+    as_tibble() %>%
+    rename(family_info = value) %>%
+    filter(
+      str_detect(family_info, regex("\\d\\d\\d\\d")),
+      str_detect(family_info, regex("Introd|Adlad|Utdöd", ignore_case = TRUE))
+    ) %>%
+    slice(1) %>%
+    pull()
+}
+
+# function to get source of information
+get_source <- function(html) {
+  html %>%
+    html_node(xpath = "//h2[contains(., 'Källor')]/following-sibling::*[self::p or self::ul]") %>%
+    html_text2()
+}
+
+# function to get table names from headers that are level 2
+get_tables <- function(html) {
+  html %>%
+    html_nodes("h2") %>%
+    html_text() %>%
+    as_tibble() %>%
+    rename(table_number = value) %>% 
+    filter(str_detect(table_number, regex("TAB \\d+", ignore_case = TRUE)))
+}
+
+# function to get data from a table
+get_table_data <- function(h2_in, next_h2_in) {
+  message("Getting data from ", h2_in)
+  html %>%
+    html_nodes(xpath = glue::glue("//h2[contains(., '{h2_in}')]/following-sibling::*[self::p or self::ul][following-sibling::h2[contains(., '{next_h2_in}')]]")) %>%
+    html_text2() %>%
+    as_tibble() %>%
+    nest(data = everything())
+}
+```
+
+
+```{r}
+# main function
+get_family_information_from_page <- function(url_in) {
+  message("Getting info from ", url_in)
+
+  # get the html of the page
+  html <- read_html(url_in)
+
+  # get page title
+  title <- get_title(html)
+
+  # get the family origin
+  family_origin <- get_family_origin(html)
+
+  # get the source of the information
+  source <- get_source(html)
+
+  # get the tables
+  tbl_of_tables <- get_tables(html)
+
+  # count the number of tables
+  number_of_tables <- tbl_of_tables %>%
+    count() %>%
+    pull()
+
+  # check if there are tables on the page
+  if (number_of_tables != 0) {
+
+    # Now I want to get the heading level 2 under each table heading to grab the text between these headings:
+    tbl_of_tables_with_lead <- tbl_of_tables %>%
+      bind_rows(tibble(table_number = "Källor")) %>%
+      mutate(next_table_number = lead(table_number)) %>%
+      filter(row_number() != n())
+
+    # get data for each table
+    family_info <- tbl_of_tables_with_lead %>%
+      mutate(data = pmap(list(table_number, next_table_number), possibly(get_table_data, "failed"))) %>%
+      select(-next_table_number) %>% 
+      nest(table_info_nested = everything())
+
+    return(tibble(title = title, family_origin = family_origin, source = source, family_info = family_info))
+  } else {
+    # For no tabs, this gets all of the information
+    get_family_info_no_tabs <- function() {
+      html %>%
+        html_nodes(xpath = "//h2/following-sibling::*[self::p or self::ul][following-sibling::h2[contains(., 'Källor')]]") %>%
+        html_text2() %>%
+        as_tibble() %>%
+        mutate(value = str_squish(value)) %>%
+        nest(data = everything()) %>%
+        mutate(table_number = "Tab 0") %>%
+        relocate(table_number, .before = data)
+    }
+
+    family_info <- get_family_info_no_tabs()
+
+    return(tibble(title = title, family_origin = family_origin, source = source, family_info = family_info))
+  }
+}
+
+
+test <- get_family_information_from_page(url_in = "https://www.adelsvapen.com/genealogi/Adlerbeth_nr_1732")
+
+test %>% unnest() %>% unnest() %>% unnest() %>% unnest() %>% view()
+```
+
+
+```{r}
+family_links <- read_rds(here::here("links", "family_links.rds"))
+
+family_links_test
+
+test <- family_links %>%
+  mutate(branch_url = str_c("https://www.adelsvapen.com", branch_url)) %>% 
+  slice(10L:20L) %>% 
+  select(family, branch_url) %>% view()
+  mutate(data = map(branch_url, possibly(get_family_information_from_page, "failed")))
+
+test %>% 
+  unnest(data) %>% view()
+```
+

@@ -1,0 +1,161 @@
+---
+title: "Untitled"
+format: html
+---
+
+
+### Big scraping function 
+
+TODO: Fix family info beyond when the family is named noble etc.
+
+```{r}
+library(tidyverse)
+library(rvest)
+library(glue)
+
+# function to get page title
+get_title <- function(html) {
+  html %>%
+    html_nodes("h1") %>%
+    html_text()
+}
+
+# function to get family origin
+get_family_origin <- function(html) {
+  html %>%
+    html_nodes("p") %>%
+    html_text2() %>%
+    as_tibble() %>%
+    rename(family_info = value) %>%
+    filter(
+      str_detect(family_info, regex("\\d\\d\\d\\d")),
+      str_detect(family_info, regex("Introd|Adlad|Utdöd", ignore_case = TRUE))
+    ) %>%
+    slice(1) %>%
+    pull()
+}
+
+# function to get source of information
+get_source <- function(html) {
+  html %>%
+    html_node(xpath = "//h2[contains(., 'Källor')]/following-sibling::*[self::p or self::ul]") %>%
+    html_text2()
+}
+
+# function to get table names from headers that are level 2
+get_tables <- function(html) {
+  html %>%
+    html_nodes("h2") %>%
+    html_text() %>%
+    as_tibble() %>%
+    rename(table_number = value) %>% 
+    filter(str_detect(table_number, regex("TAB \\d+", ignore_case = TRUE)))
+}
+
+# function to get data from a table
+get_table_data <- function(html, tn_in, ntn_in) {
+  message("Getting data from ", tn_in)
+  html %>%
+    html_nodes(xpath = glue("//h2[contains(., '{tn_in}')]/following-sibling::*[self::p or self::ul][following-sibling::h2[contains(., '{ntn_in}')]]")) %>%
+    html_text2() %>%
+    as_tibble() %>%
+    nest(data = everything())
+}
+```
+
+
+```{r}
+# main function
+get_family_information_from_page <- function(url_in) {
+  message("Getting info from ", url_in)
+  Sys.sleep(0.5)
+
+  # get the html of the page
+  html <- read_html(url_in)
+
+  # get page title
+  title <- get_title(html)
+
+  # get the family origin
+  family_origin <- get_family_origin(html)
+
+  # get the source of the information
+  source <- get_source(html)
+
+  # get the tables
+  tbl_of_tables <- get_tables(html)
+
+  # count the number of tables
+  number_of_tables <- tbl_of_tables %>%
+    count() %>%
+    pull()
+
+  # check if there are tables on the page
+  if (number_of_tables != 0) {
+
+    # Now I want to get the heading level 2 under each table heading to grab the text between these headings:
+    tbl_of_tables_with_lead <- tbl_of_tables %>%
+      bind_rows(tibble(table_number = "Källor")) %>%
+      mutate(next_table_number = lead(table_number)) %>%
+      filter(row_number() != n())
+    
+    tbl_of_tables_with_html <- tibble(html = list(html)) %>% 
+      bind_cols(tbl_of_tables_with_lead)
+
+    # get data for each table
+    family_info <- tbl_of_tables_with_html %>%
+      mutate(data = pmap(list(html, table_number, next_table_number), possibly(get_table_data, "failed"))) %>%
+      select(-c(next_table_number, html)) %>% 
+      nest(table_info_nested = everything())
+
+    output <- tibble(
+      title,
+      family_origin,
+      source,
+      family_info
+    )
+  } else {
+    # For no tabs, this gets all of the information
+    family_info <- html %>%
+        html_nodes(xpath = "//h2/following-sibling::*[self::p or self::ul][following-sibling::h2[contains(., 'Källor')]]") %>%
+        html_text2() %>%
+        as_tibble() %>%
+        mutate(value = str_squish(value)) %>%
+        nest(data = everything()) %>%
+        mutate(table_number = "Tab 0") %>%
+        relocate(table_number, .before = data) %>% 
+        nest(table_info_nested = everything())
+
+    output <- tibble(title, 
+                  family_origin, 
+                  source, 
+                  family_info)
+  }
+  
+  return(output)
+}
+
+
+test <- get_family_information_from_page(url_in = "https://www.adelsvapen.com/genealogi/Adelstierna_nr_1441")
+
+test %>% unnest() %>% unnest() %>% unnest() %>% unnest() %>% view()
+```
+
+
+```{r}
+family_links <- read_rds(here::here("links", "family_links.rds"))
+
+family_links_test <- family_links %>% 
+  slice(10L:20L)
+
+test <- family_links_test %>%
+  mutate(branch_url = str_c("https://www.adelsvapen.com", branch_url)) %>% 
+  select(family, branch_url) %>%
+  mutate(data = map(branch_url, possibly(get_family_information_from_page, "failed")))
+
+test %>% 
+  unnest(data) %>% unnest() %>% unnest() %>% unnest() %>% unnest() %>% view()
+
+test %>% write_rds(here::here("temp", "links_test.rds"))
+```
+

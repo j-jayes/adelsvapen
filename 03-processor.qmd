@@ -1,0 +1,116 @@
+---
+title: "Processing"
+format: html
+execute: 
+  echo: false
+  warning: false
+---
+
+## Purpose
+
+Give examples of the data in a table.
+
+## Info
+
+Here is an example of 4 families shown with the data collected.
+
+The coloured bar shows the name of the family, the tab number (if there are no tabs on the page, it will default to tab 0), and information about when the family was introduced as nobility.
+
+```{r}
+library(tidyverse)
+library(gt)
+
+df_nested <- read_rds(here::here("temp", "links_test.rds"))
+```
+
+```{r}
+df <- df_nested %>% 
+  unnest(data) %>% unnest() %>% unnest() %>% unnest() %>% unnest()
+```
+
+```{r}
+set.seed(123)
+
+list_of_families <- df %>% 
+  distinct(title, branch_url) %>% 
+  slice_sample(n = 4)
+```
+
+```{r}
+df %>% 
+  filter(title == "Adelstierna nr 1441") %>%
+  select(-value1, -family, -branch_url, -source) %>% 
+  group_by(title, table_number, family_origin) %>% 
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "midnightblue"),
+      cell_text(style = "italic", color = "white")
+    ),
+    locations = cells_row_groups()
+  ) %>% 
+  tab_options(column_labels.hidden = TRUE) %>% 
+  tab_header(title = md("**Example of Adelsvapen family data**"),
+             subtitle = "Adelstierna nr 1441") %>% 
+  tab_source_note(md("Source: [click here for family page](https://www.adelsvapen.com/genealogi/Adelstierna_nr_1441)"))
+```
+
+
+```{r}
+df %>% 
+  filter(title == "Adlerbielke nr 1675") %>%
+  select(-value1, -family, -branch_url, -source) %>% 
+  group_by(title, table_number, family_origin) %>% 
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "#2ca25f"),
+      cell_text(style = "italic", color = "white")
+    ),
+    locations = cells_row_groups()
+  ) %>% 
+  tab_options(column_labels.hidden = TRUE) %>% 
+  tab_header(title = md("**Example of Adelsvapen family data**"),
+             subtitle = "Adlerbielke nr 1675") %>% 
+  tab_source_note(md("Source: [click here for family page](https://www.adelsvapen.com/genealogi/Adlerbielke_nr_1675)"))
+```
+
+```{r}
+df %>% 
+  filter(title == "Adlerbrandt nr 2034") %>%
+  select(-value1, -family, -branch_url, -source) %>% 
+  group_by(title, table_number, family_origin) %>% 
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "#8856a7"),
+      cell_text(style = "italic", color = "white")
+    ),
+    locations = cells_row_groups()
+  ) %>% 
+  tab_options(column_labels.hidden = TRUE) %>% 
+  tab_header(title = md("**Example of Adelsvapen family data**"),
+             subtitle = "Adlerbrandt nr 2034") %>% 
+  tab_source_note(md("Source: [click here for family page](https://www.adelsvapen.com/genealogi/Adlerbrandt_nr_2034)"))
+```
+
+
+```{r}
+df %>% 
+  filter(title == "Adlerbeth nr 1732") %>%
+  select(-value1, -family, -branch_url, -source) %>% 
+  group_by(title, table_number, family_origin) %>% 
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "#e34a33"),
+      cell_text(style = "italic", color = "white")
+    ),
+    locations = cells_row_groups()
+  ) %>% 
+  tab_options(column_labels.hidden = TRUE) %>% 
+  tab_header(title = md("**Example of Adelsvapen family data**"),
+             subtitle = "Adlerbeth nr 1732") %>% 
+  tab_source_note(md("Source: [click here for family page](https://www.adelsvapen.com/genealogi/Adlerbeth_nr_1732)"))
+```
+
