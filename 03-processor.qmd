@@ -114,3 +114,13 @@ df %>%
   tab_source_note(md("Source: [click here for family page](https://www.adelsvapen.com/genealogi/Adlerbeth_nr_1732)"))
 ```
 
+### Export data to Stata format
+
+```{r}
+library(haven)
+
+df %>% 
+  select(-value1) %>% 
+  write_dta(here::here("scraped data (Stata)", "small_sample.dta"))
+```
+
