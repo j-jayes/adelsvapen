@@ -67,8 +67,10 @@ get_table_data <- function(html, tn_in, ntn_in) {
 ```{r}
 # main function
 get_family_information_from_page <- function(url_in) {
-  message("Getting info from ", url_in)
-  Sys.sleep(0.5)
+  sleep_time <- rnorm(1, 10, sd = 2) %>% round()
+
+  message("Getting info from ", url_in, " and sleeping for ", sleep_time, " seconds")
+  Sys.sleep(sleep_time)
 
   # get the html of the page
   html <- read_html(url_in)
@@ -145,17 +147,19 @@ test %>% unnest() %>% unnest() %>% unnest() %>% unnest() %>% view()
 ```{r}
 family_links <- read_rds(here::here("links", "family_links.rds"))
 
-family_links_test <- family_links %>% 
-  slice(10L:20L)
+# family_links_test <- family_links %>% 
+#   slice(10L:20L)
 
-test <- family_links_test %>%
+df_out <- family_links %>%
   mutate(branch_url = str_c("https://www.adelsvapen.com", branch_url)) %>% 
   select(family, branch_url) %>%
+  slice(1001:2000) %>% 
   mutate(data = map(branch_url, possibly(get_family_information_from_page, "failed")))
 
-test %>% 
-  unnest(data) %>% unnest() %>% unnest() %>% unnest() %>% unnest() %>% view()
+st <- format(Sys.time(), "%Y-%m-%d-%I-%M-%p")
 
-test %>% write_rds(here::here("temp", "links_test.rds"))
+df_out %>% 
+  write_rds(here::here(paste0("data/raw/df_out_", st, ".rds")), compress = "gz")
+
 ```
 
