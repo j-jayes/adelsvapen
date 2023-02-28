@@ -1,0 +1,148 @@
+---
+title: "Processing"
+format: html
+execute: 
+  echo: false
+  warning: false
+---
+
+## Purpose
+
+Process scraped data for output.
+
+### Planning
+
+There are three parts.
+
+1. Ingest the data.
+
+2. Filter and join.
+2.5 Retry the failed entries
+
+3. Export.
+
+## Ingest
+
+```{r}
+library(tidyverse)
+library(gt)
+
+files <- list.files(here::here("data", "raw"), pattern = ".rds", full.names = T)
+
+df <- files %>% 
+  map_df(read_rds)
+```
+
+## Filter and join
+
+Filter and unnest
+
+```{r}
+df_not_failed <- df %>% 
+  filter(data != "failed")
+
+df_tab_zero <- df_not_failed %>% 
+  unnest(data) %>% 
+  unnest() %>% 
+  filter(table_number == "Tab 0")
+
+df_tab_not_zero <- df_not_failed %>% 
+  unnest(data) %>% 
+  unnest() %>% 
+  filter(table_number != "Tab 0")
+
+df_tab_zero_unnested <- df_tab_zero %>% 
+  unnest()
+
+df_tab_not_zero_unnested <- df_tab_not_zero %>% 
+  unnest() %>% 
+  unnest()
+```
+
+Join
+
+```{r}
+df_out <- df_tab_zero_unnested %>% 
+  bind_rows(df_tab_not_zero_unnested)
+
+# df_out %>%
+#   count(family, title, sort = T)
+# 
+# df_out %>% 
+#   filter(str_detect(title, "Von Schantz nr 1255")) %>% view()
+```
+
+## Process
+
+Line breaks.
+
+In some instances, line breaks should be interpreted as new rows. We can use the `separate_rows` command to do this, and then `str_squish` afterwards.
+
+```{r}
+df_out %>% 
+  filter(str_detect(value, "\n")) %>% head(200) %>% view()
+
+df_out_line_breaks <- df_out %>% 
+  separate_rows(value, sep = "\n")
+```
+
+Remove family origin from value column. Sometimes the first line in value is the same as the family origin.
+
+
+
+```{r}
+df_out_line_breaks_filtered <- df_out_line_breaks %>% 
+  filter(family_origin != value) %>%
+  filter(!value %in% c("", "\n"))
+
+df_out_line_breaks_filtered %>% 
+  head(100) %>% view()
+
+df_out_line_breaks_filtered %>% 
+  count(title, sort = T) %>% tail(200) %>% view()
+```
+
+Remove repeated observations
+
+```{r}
+df_out_value_counts <- df_out_line_breaks_filtered %>% 
+  group_by(title, table_number) %>% 
+  mutate(top_entry = case_when(
+    row_number() == 1 ~ value,
+    TRUE ~ NA_character_
+  )) %>% 
+  ungroup()
+
+df_out_deduplicated <- df_out_value_counts %>%
+  mutate(flag_up_col = top_entry) %>%
+  fill(flag_up_col, .direction = "up") %>%
+  group_by(title, table_number) %>%
+  mutate(flag_col = case_when(
+    row_number() != 1 & flag_up_col == value ~ "TRUE",
+    TRUE ~ NA_character_
+  )) %>%
+  fill(flag_col, .direction = "down") %>%
+  ungroup() %>%
+  filter(is.na(flag_col)) %>% 
+  select(-c(top_entry:flag_col))
+  
+  
+df_out_arranged <- df_out_deduplicated %>% 
+  mutate(family_number = parse_number(title),
+         table_number = parse_number(table_number)) %>% 
+  arrange(family, family_number) %>% 
+  select(-family_number)
+
+```
+
+
+### Export data to Stata format
+
+```{r}
+# library(haven)
+
+df_out_arranged %>% 
+  # select(-value1) %>% 
+  write_csv2(here::here("data", "processed", "complete_dataset_pass_1.csv"))
+```
+

@@ -16,8 +16,10 @@ library(glue)
 # function to get page title
 get_title <- function(html) {
   html %>%
-    html_nodes("h1") %>%
-    html_text()
+    html_nodes("title") %>%
+    html_text() %>% 
+    str_remove(., "- Adelsvapen-Wiki") %>% 
+    str_squish()
 }
 
 # function to get family origin
@@ -61,6 +63,13 @@ get_table_data <- function(html, tn_in, ntn_in) {
     as_tibble() %>%
     nest(data = everything())
 }
+
+
+html %>%
+  html_nodes(xpath = glue("//h2[contains(., 'TAB 1')]/following-sibling::*[self::p or self::ul][following-sibling::h2[contains(., 'TAB 2')]]")) %>%
+  html_text2() %>%
+  as_tibble() %>%
+  nest(data = everything())
 ```
 
 
@@ -161,5 +170,107 @@ st <- format(Sys.time(), "%Y-%m-%d-%I-%M-%p")
 df_out %>% 
   write_rds(here::here(paste0("data/raw/df_out_", st, ".rds")), compress = "gz")
 
+```
+
+## Noble families
+
+```{r}
+noble_families <- tribble(
+  ~family, ~url,
+  "Abrahamsson - von Döbeln", "https://www.adelsvapen.com/genealogi/Abrahamsson_-_von_D%C3%B6beln",
+  "von Ebbertz - Järnefelt", "https://www.adelsvapen.com/genealogi/Von_Ebbertz_-_J%C3%A4rnefelt",
+  "Kafle - Oxehufwud", "https://www.adelsvapen.com/genealogi/Kafle_-_Oxehufwud",
+  "Pahl - Sölfvermusköt", "https://www.adelsvapen.com/genealogi/Pahl_-_S%C3%B6lfvermusk%C3%B6t",
+  "Tallberg - Östner", "https://www.adelsvapen.com/genealogi/Tallberg_-_%C3%96stner"
+)
+
+get_branches <- function(url_in) {
+  message("Getting branches of family tree from: ", url_in)
+  Sys.sleep(5)
+  html <- read_html(url_in)
+
+  family_links <- html %>%
+    html_nodes("a") %>%
+    html_attr("href")
+
+  family_links_filtered <- family_links %>%
+    as_tibble() %>%
+    rename(branch_url = value) %>%
+    # get family links that contain a /genealogi beginning and a number
+    filter(
+      str_detect(branch_url, "/genealogi/.+\\d"),
+      !str_detect(branch_url, "Adelsvapen-Wiki"),
+      !str_detect(branch_url, "Special:")
+    )
+  
+  return(family_links_filtered)
+}
+
+noble_families_branches <- noble_families %>% 
+  mutate(branches = map(url, possibly(get_branches, "failed")))
+```
+
+## Not noble families
+
+```{r}
+not_noble_families <- tribble(
+  ~family, ~url,
+  "Friherrliga ätter", "https://www.adelsvapen.com/genealogi/Kategori:Friherrliga_%C3%A4tter",
+  "Grevliga ätter", "https://www.adelsvapen.com/genealogi/Kategori:Grevliga_%C3%A4tter",
+  "Ointroducerade adliga ätter", "https://www.adelsvapen.com/genealogi/Kategori:Ointroducerade_adliga_%C3%A4tter",
+  "Övriga släkter", "https://www.adelsvapen.com/genealogi/Kategori:Sl%C3%A4kter",
+  "Grevliga vapensköldar", "https://www.adelsvapen.com/genealogi/Kategori:Grevliga_vapensk%C3%B6ldar"
+)
+
+
+get_not_noble_branches <- function(){
+  message("Getting branches of family tree from: ", url_in)
+  Sys.sleep(5)
+  html <- read_html(url_in)
+
+  family_links_filtered <- html %>%
+  html_nodes("li") %>%
+  html_nodes("a") %>%
+  html_attr("href") %>%
+  as_tibble() %>%
+  rename(branch_url = value) %>%
+  # get family links that contain a /genealogi beginning and a number
+  filter(
+    str_detect(branch_url, "/genealogi/.+\\d"),
+    !str_detect(branch_url, "Adelsvapen-Wiki"),
+    !str_detect(branch_url, "Special:")
+  )
+  
+  return(family_links_filtered)
+  
+}
+
+not_noble_families_branches <- not_noble_families %>% 
+  mutate(branches = map(url, possibly(get_branches, "failed")))
+
+not_noble_families_branches %>% 
+  unnest() %>% 
+  write_rds(here::here("links", "not_noble_family_links.rds"))
+
+```
+
+## Get not noble families
+
+```{r}
+not_noble_families_branches <- read_rds(here::here("links", "not_noble_family_links.rds"))
+
+# family_links_test <- family_links %>% 
+#   slice(10L:20L)
+
+df_out <- not_noble_families_branches %>%
+  mutate(branch_url = str_c("https://www.adelsvapen.com", branch_url)) %>% 
+  select(family, branch_url) %>%
+  # head(5) %>% 
+  mutate(data = map(branch_url, possibly(get_family_information_from_page, "failed")))
+
+st <- format(Sys.time(), "%Y-%m-%d-%I-%M-%p")
+
+df_out %>% 
+  write_rds(here::here(paste0("data/raw/df_out_", st, ".rds")), compress = "gz")
 ```
 
