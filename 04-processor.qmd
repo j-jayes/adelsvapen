@@ -143,6 +143,9 @@ df_out_arranged <- df_out_deduplicated %>%
 
 ```{r}
 # library(haven)
+# df_out_arranged %>% 
+#   write_dta(here::here("data", "processed", "adelsvapen_dataset.dta"))
+
 df_out_arranged %>% 
   write_excel_csv2(here::here("data", "processed", "adelsvapen_dataset.csv"))
 

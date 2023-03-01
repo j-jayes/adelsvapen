@@ -6,7 +6,41 @@ execute:
   messae: false
 ---
 
-# Purpose
+# Download the data
+
+```{r}
+library(tidyverse)
+library(gt)
+
+tibble(
+  type = c("CSV", "Stata"),
+  links = c(
+    "data/processed/adelsvapen_dataset.csv",
+    "adelsvapen_dataset.zip"
+  ),
+  logos = c("https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+            "https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_stata_icon_130148.png")
+) %>%
+  mutate(
+    link = glue::glue("<a href = {links}>
+                      <img src='{logos}' width='50' height='50'>
+                                   </a>"),
+    link_text = glue::glue("<a href = {links}>
+                      {type}
+                                   </a>"),
+    link = purrr::map(link, gt::html),
+    link_text = purrr::map(link_text, gt::html)
+  ) %>%
+  select(link, link_text) %>%
+  gt() %>%
+  cols_align(columns = c(link, link_text), align = "left") %>% 
+  tab_options(column_labels.hidden = TRUE) %>% 
+  tab_header(title = md("**Download data**")) %>% 
+  as_raw_html(inline_css = TRUE)
+```
+
+
+## Purpose
 
 Scraper of [Adelsvapen](https://www.adelsvapen.com/genealogi/Huvudsida) genealogy website for noble families of Sweden.
 
