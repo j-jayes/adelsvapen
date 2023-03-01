@@ -41,6 +41,9 @@ Filter and unnest
 df_not_failed <- df %>% 
   filter(data != "failed")
 
+# df_failed <- df %>% 
+#   filter(data == "failed")
+
 df_tab_zero <- df_not_failed %>% 
   unnest(data) %>% 
   unnest() %>% 
@@ -136,10 +139,13 @@ df_out_arranged <- df_out_deduplicated %>%
 ```
 
 
-### Export data to Stata format
+### Export data
 
 ```{r}
 # library(haven)
+df_out_arranged %>% 
+  write_excel_csv2(here::here("data", "processed", "adelsvapen_dataset.csv"))
+
 
 df_out_arranged %>% 
   # select(-value1) %>% 
