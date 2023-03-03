@@ -1,8 +1,6 @@
 ---
-format:
-  html: 
-    code-fold: true
-  gfm:
+format: 
+  gfm: 
     keep-yaml: true
 execute: 
   warning: false
