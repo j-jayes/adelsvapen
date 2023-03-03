@@ -1,5 +1,9 @@
 ---
-format: gfm
+format:
+  html: 
+    code-fold: true
+  gfm:
+    keep-yaml: true
 execute: 
   warning: false
   echo: false
